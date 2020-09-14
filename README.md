@@ -2,26 +2,25 @@
 
 ## users テーブル
 
-| Column           | Type   | Options     |
-| ---------------- | ------ | ----------- |
-| nickname         | string | null: false |
-| email            | string | null: false |
-| password         | string | null: false |
-| family_name      | string | null: false |
-| first_name       | string | null: false |
-| family_name_kana | string | null: false |
-| first_name_kana  | string | null: false |
-| birthday         | date   | null: false |
+| Column             | Type   | Options     |
+| ------------------ | ------ | ----------- |
+| nickname           | string | null: false |
+| email              | string | null: false |
+| encrypted_password | string | null: false |
+| family_name        | string | null: false |
+| first_name         | string | null: false |
+| family_name_kana   | string | null: false |
+| first_name_kana    | string | null: false |
+| birthday           | date   | null: false |
 
 - has_many :items
-- has_many :address
+- has_many :orders
 
 ## items テーブル
 
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
 | user          | references | null: false, foreign_key: true |
-| image         | string     | null: false                    |
 | name          | string     | null: false                    |
 | text          | text       | null: false                    |
 | category      | integer    | null: false                    |
@@ -41,14 +40,16 @@
 | user   | references | null: false, foreign_key: true |
 | item   | references | null: false, foreign_key: true |
 
-- belongs_to :addres
+- has_one :addres
 - belongs_to :item
+- belongs_to :user
+
 
 ## address テーブル
 
 | Column       | Type       | Options                        |
 | ------------ | ---------- | ------------------------------ |
-| user         | references | null: false, foreign_key: true |
+| order        | references | null: false, foreign_key: true |
 | postal       | string     | null: false                    |
 | prefecture   | integer    | null: false                    |
 | city         | string     | null: false                    |
@@ -56,5 +57,4 @@
 | address2     | string     |                                |
 | phone_number | string     | null: false                    |
 
-- belongs_to :user
-- has_one :oder
+- belongs_to :oder
