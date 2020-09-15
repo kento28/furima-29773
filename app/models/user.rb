@@ -15,8 +15,6 @@ class User < ApplicationRecord
       validates :first_name_kana, format: { with: /\A[ァ-ヶー－]+\z/, message: "は全角カタカナで入力して下さい。" }
       validates :password, format: { with: /\A[a-z0-9]+\z/i, message: "は半角英数で入力してください。" }
       validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i, message: "は半角英数混合で入力してください。" }
-      validates :password, length: { minimum: 5 }, format: { message: "は6文字以上で入力してください。" }
       validates :email, format: { with: /@[a-z\d\-.]+\.[a-z]+\z/i, message: "は正しく表記されていません。" }
-      validates :email, uniqueness: true, format: { message: " は既に登録されています。" }
     end
 end
