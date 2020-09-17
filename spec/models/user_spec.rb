@@ -57,17 +57,25 @@ describe User do
         @user.valid?
         expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
       end
-      it 'family_nameとfirst_nameが全角で入力されている' do
+      it 'family_nameが全角で入力されている' do
         @user.family_name = 'yamada'
+        @user.valid?
+        expect(@user.errors.full_messages).to include('Family name は全角で入力してください。')
+      end
+      it 'first_nameが全角で入力されている' do
         @user.first_name = 'tarou'
         @user.valid?
-        expect(@user.errors.full_messages).to include('Family name は全角で入力してください。' , 'First name は全角で入力してください。')
+        expect(@user.errors.full_messages).to include('First name は全角で入力してください。')
       end
-      it 'family_name_kanaとfirst_name_kanaが全角カタカナで入力されている' do
+      it 'family_name_kanaが全角カタカナで入力されている' do
         @user.family_name_kana = '山田'
+        @user.valid?
+        expect(@user.errors.full_messages).to include('Family name kana は全角カタカナで入力して下さい。' )
+      end
+      it 'first_name_kanaが全角カタカナで入力されている' do
         @user.first_name_kana = '太郎'
         @user.valid?
-        expect(@user.errors.full_messages).to include('Family name kana は全角カタカナで入力して下さい。' , 'First name kana は全角カタカナで入力して下さい。')
+        expect(@user.errors.full_messages).to include('First name kana は全角カタカナで入力して下さい。')
       end
     end
   end
