@@ -24,9 +24,9 @@
 | name          | string     | null: false                    |
 | text          | text       | null: false                    |
 | category      | integer    | null: false                    |
-| state         | integer    | null: false                    |
+| condition     | integer    | null: false                    |
 | postage       | integer    | null: false                    |
-| region        | integer    | null: false                    |
+| prefecture    | integer    | null: false                    |
 | shipping_days | integer    | null: false                    |
 | price         | integer    | null: false                    |
 
