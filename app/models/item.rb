@@ -15,7 +15,7 @@ class Item < ApplicationRecord
       validates :category_id
       validates :condition_id
       validates :postage_id
-      validates :shipping_days_id
+      validates :shipping_day_id
     end
 
     validates :prefecture_id, numericality: { other_than: 0, message: 'Select' }
