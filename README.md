@@ -40,12 +40,12 @@
 | user   | references | null: false, foreign_key: true |
 | item   | references | null: false, foreign_key: true |
 
-- has_one :addres
+- has_one :address
 - belongs_to :item
 - belongs_to :user
 
 
-## address テーブル
+## addresses テーブル
 
 | Column       | Type       | Options                        |
 | ------------ | ---------- | ------------------------------ |

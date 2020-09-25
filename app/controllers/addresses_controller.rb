@@ -1,4 +1,4 @@
-class OrdersController < ApplicationController
+class AddressesController < ApplicationController
   def index
     @item = Item.find(params[:item_id])
   end
