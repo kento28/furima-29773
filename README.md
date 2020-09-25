@@ -49,12 +49,12 @@
 
 | Column       | Type       | Options                        |
 | ------------ | ---------- | ------------------------------ |
-| order        | references | null: false, foreign_key: true |
+| item         | references | null: false, foreign_key: true |
 | postal       | string     | null: false                    |
 | prefecture   | integer    | null: false                    |
 | city         | string     | null: false                    |
 | address1     | string     | null: false                    |
 | address2     | string     |                                |
-| phone_number | string     | null: false                    |
+| telephone    | string     | null: false, unique: true      |
 
 - belongs_to :oder
