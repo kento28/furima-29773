@@ -15,46 +15,49 @@ describe OrderAddress, type: :model do
     end
 
     context '購入が失敗したとき' do
-      it 'orderが空で-が無しだと購入できない' do
+      it 'orderが空だと購入できない' do
         @order_address.postal = ' '
         @order_address.valid?
-        # binding.pry
         expect(@order_address.errors.full_messages).to include("Postal can't be blank", 'Postal is invalid')
+      end
+      it 'orderにハイフン（-）を含まないと購入できない' do
+        @order_address.postal = '1234567'
+        @order_address.valid?
+        expect(@order_address.errors.full_messages).to include("Postal is invalid")
       end
       it 'prefecture_idが空だと購入できない' do
         @order_address.prefecture_id = ' '
         @order_address.valid?
-        # binding.pry
         expect(@order_address.errors.full_messages).to include("Prefecture can't be blank", 'Prefecture Select')
       end
       it 'prefecture_idが0だと購入できない' do
         @order_address.prefecture_id = 0
         @order_address.valid?
-        # binding.pry
         expect(@order_address.errors.full_messages).to include('Prefecture Select')
       end
       it 'cityが空だと購入できない' do
         @order_address.city = ' '
         @order_address.valid?
-        # binding.pry
         expect(@order_address.errors.full_messages).to include("City can't be blank")
       end
       it 'address1が空だと購入できない' do
         @order_address.address1 = ' '
         @order_address.valid?
-        # binding.pry
         expect(@order_address.errors.full_messages).to include("Address1 can't be blank")
       end
       it 'telephoneが空だと購入できない' do
         @order_address.telephone = ' '
         @order_address.valid?
-        # binding.pry
         expect(@order_address.errors.full_messages).to include("Telephone can't be blank")
       end
       it 'telephoneが11桁以上だと購入できない' do
         @order_address.telephone = ' '
         @order_address.valid?
-        # binding.pry
+        expect(@order_address.errors.full_messages).to include("Telephone can't be blank")
+      end
+      it 'telephoneにハイフン（-）が含まれると購入できない' do
+        @order_address.telephone = ' '
+        @order_address.valid?
         expect(@order_address.errors.full_messages).to include("Telephone can't be blank")
       end
     end
