@@ -1,0 +1,12 @@
+FactoryBot.define do
+  factory :order_address do
+        postal { '123-4567' }
+        prefecture_id { 1 }
+        city              { '東京' }
+        address1          { '東京' }
+        address2          { '東' }
+        telephone         { 99_012_345_678 }
+        association       :item
+        association       :user
+  end
+end

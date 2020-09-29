@@ -53,15 +53,15 @@ describe Item, type: :model do
     @item.valid?
     expect(@item.errors.full_messages).to include("Postage can't be blank")
   end
-  it 'shipping_daysが1では保存できない' do
-    @item.shipping_days_id = 1
+  it 'shipping_dayが1では保存できない' do
+    @item.shipping_day_id = 1
     @item.valid?
-    expect(@item.errors.full_messages).to include('Shipping days Select')
+    expect(@item.errors.full_messages).to include('Shipping day Select')
   end
-  it 'shipping_daysが空では保存できない' do
-    @item.shipping_days_id = nil
+  it 'shipping_dayが空では保存できない' do
+    @item.shipping_day_id = nil
     @item.valid?
-    expect(@item.errors.full_messages).to include("Shipping days can't be blank")
+    expect(@item.errors.full_messages).to include("Shipping day can't be blank")
   end
   it 'prefecture_idが0では保存できない' do
     @item.prefecture_id = 0
