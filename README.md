@@ -59,45 +59,6 @@
 
 - belongs_to :oder
 
-| Column   | Type   | Options     |
-| -------- | ------ | ----------- |
-| id       | string | null: false |
-| name     | string | null: false |
-| email    | string | null: false |
-| password | string | null: false |
-| name     | string | null: false |
-| birthday | string | null: false |
 
-## items テーブル
 
-| Column        | Type   | Options     |
-| ------------- | ------ | ----------- |
-| name          | string | null: false |
-| id            | string | null: false |
-| image         | string | null: false |
-| name          | string | null: false |
-| comment       | string | null: false | 
-| category      | string | null: false |
-| state         | string | null: false |
-| postage       | string | null: false |
-| region        | string | null: false |
-| shipping_date | string | null: false |
-| price         | string | null: false |
-| saler_id      | string | null: false |
-| buyer_id      | string | null: false |
-
-## buys テーブル
-
-| Column       | Type       | Options                        |
-| ------------ | ---------- | ------------------------------ |
-| id           | references | null: false, foreign_key: true |
-| card_number  | references | null: false, foreign_key: true |
-| expiration   | references | null: false, foreign_key: true |
-| security_code| references | null: false, foreign_key: true |
-| postal       | references | null: false, foreign_key: true |
-| prefectures  | references | null: false, foreign_key: true |
-| municipality | references | null: false, foreign_key: true |
-| address      | references | null: false, foreign_key: true |
-| building_name| references | null: false, foreign_key: true |
-| phone_number | references | null: false, foreign_key: true |
 
