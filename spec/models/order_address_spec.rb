@@ -4,7 +4,7 @@ describe OrderAddress, type: :model do
     buyer = FactoryBot.create(:user)
     item = FactoryBot.create(:item)
     @order_address = FactoryBot.build(:order_address, item_id: item.id, user_id: buyer.id)
-    sleep 2
+    sleep 1
   end
 
   describe '商品購入' do
@@ -51,14 +51,14 @@ describe OrderAddress, type: :model do
         expect(@order_address.errors.full_messages).to include("Telephone can't be blank")
       end
       it 'telephoneが11桁以上だと購入できない' do
-        @order_address.telephone = ' '
+        @order_address.telephone = '123456789100'
         @order_address.valid?
-        expect(@order_address.errors.full_messages).to include("Telephone can't be blank")
+        expect(@order_address.errors.full_messages).to include()
       end
       it 'telephoneにハイフン（-）が含まれると購入できない' do
-        @order_address.telephone = ' '
+        @order_address.telephone = '123-4567-891'
         @order_address.valid?
-        expect(@order_address.errors.full_messages).to include("Telephone can't be blank")
+        expect(@order_address.errors.full_messages).to include()
       end
     end
   end
