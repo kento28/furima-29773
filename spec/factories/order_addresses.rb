@@ -5,7 +5,7 @@ FactoryBot.define do
         city              { '東京' }
         address1          { '東京' }
         address2          { '東' }
-        telephone         { 99_012_345_678 }
+        telephone         { 12345678912 }
         association       :item
         association       :user
   end

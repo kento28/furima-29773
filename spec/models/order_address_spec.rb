@@ -53,12 +53,12 @@ describe OrderAddress, type: :model do
       it 'telephoneが11桁以上だと購入できない' do
         @order_address.telephone = '123456789100'
         @order_address.valid?
-        expect(@order_address.errors.full_messages).to include()
+        expect(@order_address.errors.full_messages).to include("Telephone は11桁ハイフンなしで入力してください。")
       end
       it 'telephoneにハイフン（-）が含まれると購入できない' do
         @order_address.telephone = '123-4567-891'
         @order_address.valid?
-        expect(@order_address.errors.full_messages).to include()
+        expect(@order_address.errors.full_messages).to include("Telephone は11桁ハイフンなしで入力してください。")
       end
     end
   end
