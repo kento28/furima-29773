@@ -25,7 +25,7 @@ class AddressesController < ApplicationController
   end
 
   def item_params
-    params.permit(:postal, :city, :prefecture_id, :address1, :address2, :telephone, :item_id).merge(user_id: current_user.id)
+    params.permit(:postal, :city, :prefecture_id, :address1, :address2, :telephone, :item_id, :token).merge(user_id: current_user.id)
   end
 
   def pay_item
