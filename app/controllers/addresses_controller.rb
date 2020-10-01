@@ -4,6 +4,8 @@ class AddressesController < ApplicationController
   def index
     if @item.order.present? 
       redirect_to root_path
+    else  user_signed_in? && @item.user_id == current_user.id 
+      redirect_to root_path
     end
   end
 
