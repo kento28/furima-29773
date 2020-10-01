@@ -2,7 +2,7 @@ class AddressesController < ApplicationController
   before_action :authenticate_user!, only: :index
   before_action :set_item
   def index
-    if @item.order.present? or user_signed_in? && @item.user_id == current_user.id 
+    if |@item.order.present?| or |user_signed_in? && @item.user_id == current_user.id| 
       redirect_to root_path
     end
   end
