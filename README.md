@@ -27,7 +27,7 @@
 | condition     | integer    | null: false                    |
 | postage       | integer    | null: false                    |
 | prefecture    | integer    | null: false                    |
-| shipping_days | integer    | null: false                    |
+| shipping_day  | integer    | null: false                    |
 | price         | integer    | null: false                    |
 
 - belongs_to :user
@@ -40,25 +40,21 @@
 | user   | references | null: false, foreign_key: true |
 | item   | references | null: false, foreign_key: true |
 
-- has_one :addres
+- has_one :address
 - belongs_to :item
 - belongs_to :user
 
 
-## address テーブル
+## addresses テーブル
 
 | Column       | Type       | Options                        |
 | ------------ | ---------- | ------------------------------ |
-| order        | references | null: false, foreign_key: true |
+| item         | references | null: false, foreign_key: true |
 | postal       | string     | null: false                    |
 | prefecture   | integer    | null: false                    |
 | city         | string     | null: false                    |
 | address1     | string     | null: false                    |
 | address2     | string     |                                |
-| phone_number | string     | null: false                    |
+| telephone    | string     | null: false, unique: true      |
 
 - belongs_to :oder
-
-
-
-

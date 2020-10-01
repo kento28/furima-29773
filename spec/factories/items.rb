@@ -6,7 +6,7 @@ FactoryBot.define do
     price                 { 1111 }
     name                  { 'は' }
     text                  { 'は' }
-    shipping_days_id { 3 }
+    shipping_day_id { 3 }
     postage_id { 1111 }
     prefecture_id { 3 }
 
