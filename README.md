@@ -58,3 +58,4 @@
 | telephone    | string     | null: false, unique: true      |
 
 - belongs_to :oder
+
