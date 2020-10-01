@@ -1,6 +1,10 @@
 class AddressesController < ApplicationController
+  before_action :authenticate_user!, only: :index
   before_action :set_item
   def index
+    if @item.order.present? 
+      redirect_to root_path
+    end
   end
 
   def create
