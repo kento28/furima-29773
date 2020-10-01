@@ -10,6 +10,7 @@ class OrderAddress
     validates :telephone, format: { with: /\A\d{11}\z/ , message: 'は11桁ハイフンなしで入力してください。' }
     validates :user_id
     validates :item_id
+    validates :token
   end
 
   def save
