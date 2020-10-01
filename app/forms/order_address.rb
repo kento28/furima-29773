@@ -10,10 +10,12 @@ class OrderAddress
     validates :telephone, format: { with: /\A\d{11}\z/ , message: 'は11桁ハイフンなしで入力してください。' }
     validates :user_id
     validates :item_id
-    validates :token
+
   end
 
   def save
+    item = Item.find(item_id)
+    user = User.find(user_id)
     Address.create(postal: postal, prefecture_id: prefecture_id, city: city, address1: address1,
                           address2: address2, telephone: telephone, item_id: item.id, user_id: user.id)
     Order.create(item_id: item.id, user_id: user.id)
