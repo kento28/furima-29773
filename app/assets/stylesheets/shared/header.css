@@ -102,3 +102,23 @@
   text-decoration: none;
   color: #333333;
 }
+
+.guest-login-box {
+  margin-left: 10px;
+	width: 110px;
+	text-align: center;
+	text-decoration: none;
+  background: #ea352d;
+}
+
+.guest-login-box:hover {
+  opacity:0.8;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.guest-login-btn {
+  color: #fff;
+  font-size: 14px;
+  vertical-align: middle;
+}

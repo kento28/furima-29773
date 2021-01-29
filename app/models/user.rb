@@ -18,4 +18,8 @@ class User < ApplicationRecord
     validates :password_confirmation
     validates :birthday
   end
+  
+  def self.guest
+    find_by(email: 'guest@sample.com')
+  end
 end
