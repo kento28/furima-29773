@@ -103,7 +103,7 @@
   color: #333333;
 }
 
-.gest-login-btn {
+.guest-login-box {
   margin-left: 10px;
 	width: 110px;
 	text-align: center;
@@ -111,7 +111,7 @@
   background: #ea352d;
 }
 
-.gest-login-btn:hover {
+.guest-login-box:hover {
   opacity:0.8;
   cursor: pointer;
   text-decoration: none;

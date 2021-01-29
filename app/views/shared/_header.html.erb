@@ -25,8 +25,8 @@
             <%= link_to 'ログイン', new_user_session_path, class: "post" %>
             <%= link_to '新規登録', new_user_registration_path, class: "post" %>
           </div>
-           <div class="gest-login-btn">
-            <%= link_to '閲覧用ログイン', new_user_session_path, method: :post, class:'guest-login-btn' %>
+           <div class="guest-login-box">
+            <%= link_to '閲覧用ログイン', users_guest_sign_in_path, method: :post, class:'guest-login-btn' %>
           </div>
         <% end %>
 
