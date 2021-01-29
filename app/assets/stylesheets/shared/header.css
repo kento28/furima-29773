@@ -102,3 +102,23 @@
   text-decoration: none;
   color: #333333;
 }
+
+.gest-login-btn {
+  margin-left: 10px;
+	width: 110px;
+	text-align: center;
+	text-decoration: none;
+  background: #ea352d;
+}
+
+.gest-login-btn:hover {
+  opacity:0.8;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.guest-login-btn {
+  color: #fff;
+  font-size: 14px;
+  vertical-align: middle;
+}
