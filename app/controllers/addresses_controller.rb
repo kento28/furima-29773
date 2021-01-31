@@ -1,6 +1,6 @@
 class AddressesController < ApplicationController
   before_action :authenticate_user!, only: :index
-  # before_action :set_item
+  before_action :set_item
   def index
     @deliver = OrderAddress.new
     if @item.order.present? || user_signed_in? && @item.user_id == current_user.id 
@@ -21,9 +21,9 @@ class AddressesController < ApplicationController
 
   private
 
-  # def set_item
-  #   @item = Item.find(params[:item_id])
-  # end
+  def set_item
+    @item = Item.find(params[:item_id])
+  end
 
   def item_params
     params.permit(:postal, :city, :prefecture_id, :address1, :address2, :telephone, :item_id, :token).merge(user_id: current_user.id)
